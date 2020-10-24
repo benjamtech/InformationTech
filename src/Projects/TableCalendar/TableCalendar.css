@@ -1,5 +1,4 @@
 .TableCalendar {
-  overflow-x: auto;
   height: 100%;
   width: 100vw;
   display: flex;
@@ -7,6 +6,7 @@
   align-items: center;
   background-color: var(--bg-1);
   padding: var(--spacing-600);
+  overflow-x: auto;
 }
 
 .TableCalendar table {
@@ -36,6 +36,10 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .TableCalendar {
+    padding: var(--spacing-300) var(--spacing-100);
+  }
+
   .TableCalendar td,
   .TableCalendar th {
     padding: var(--spacing-200) var(--spacing-400);
@@ -47,5 +51,25 @@
 
   .TableCalendar td {
     font-size: var(--font-size-100);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .TableCalendar table {
+    max-width: 95vw;
+  }
+
+  .TableCalendar caption {
+    font-size: var(--font-size-200);
+  }
+
+  .TableCalendar th {
+    display: none;
+  }
+
+  .TableCalendar td,
+  .TableCalendar th {
+    font-size: var(--font-size-100);
+    padding: var(--spacing-100) var(--spacing-100);
   }
 }

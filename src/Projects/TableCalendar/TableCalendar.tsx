@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { getSyntheticLeadingComments } from "typescript";
 import ClassStore, { ClassShape } from "./ClassStore";
 import Modal from "./Modal";
 import "./TableCalendar.css";
