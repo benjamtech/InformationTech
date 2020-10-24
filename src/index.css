@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  /* Box Shadow */
+  --box-shadow-100: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  --box-shadow-200: 0 4px 6px hsla(0, 0%, 0%, 0.2);
+  --box-shadow-300: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+  --box-shadow-400: 0 10px 24px hsla(0, 0%, 0%, 0.2);
+  --box-shadow-500: 0 15px 35px hsla(0, 0%, 0%, 0.2);
+
+  /* Font */
+  --font-family-heading: Raleway, sans-serif;
+  --font-family-paragraph: Lato, sans-serif;
+
+  --font-weight-100: 200;
+  --font-weight-200: 300;
+  --font-weight-300: 400;
+  --font-weight-400: 600;
+  --font-weight-500: 800;
+
+  /* Spacing */
+  --spacing-100: 4px;
+  --spacing-200: 8px;
+  --spacing-300: 12px;
+  --spacing-400: 16px;
+  --spacing-500: 24px;
+  --spacing-600: 32px;
+  --spacing-700: 48px;
+  --spacing-800: 64px;
+  --spacing-900: 96px;
+  --spacing-1000: 128px;
+  --spacing-1100: 192px;
+  --spacing-1200: 256px;
+  --spacing-1300: 384px;
+  --spacing-1400: 512px;
+  --spacing-1500: 650px;
+  --spacing-1600: 768px;
+
+  /* Border */
+
+  --border-size-100: 1px;
+  --border-size-200: 2px;
+  --border-size-300: 3px;
+  --border-size-400: 5px;
+  --border-size-500: 7px;
+
+  --border-radius-100: 7px;
+  --border-radius-200: 10px;
+  --border-radius-300: 14px;
+  --border-radius-400: 21px;
+
+  /* Font */
+  --font-size-100: 12px;
+  --font-size-200: 14px;
+  --font-size-300: 16px;
+  --font-size-400: 18px;
+  --font-size-500: 20px;
+  --font-size-600: 24px;
+  --font-size-700: 30px;
+  --font-size-800: 36px;
+  --font-size-900: 48px;
+  --font-size-1000: 60px;
+  --font-size-1100: 72px;
+
+  /* Colors */
+  --border-color: #1d3a58;
+
+  --primary-bg: #7c1a87;
+  --primary-txt: #fff;
+
+  --bg-1: #f0f4f8;
+  --text-1: #fff;
+
+  --bg-2: #fff;
+  --text-2: #d9e2ec;
+}

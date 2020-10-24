@@ -1,0 +1,72 @@
+.SubjectModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.SubjectModal .modalBody {
+  height: 80vh;
+  background-color: #fff;
+  width: 70vw;
+  box-shadow: var(--box-shadow-400);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: var(--spacing-500);
+  position: absolute;
+
+  animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(2999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .SubjectModal .modalBody {
+    height: 80vh;
+    width: 90vw;
+  }
+}
+
+.SubjectModal button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  font-size: var(--font-size-700);
+}
+
+.SubjectModal h3 {
+  font-size: var(--font-size-600);
+}
+
+.SubjectModal p {
+  font-size: var(--font-size-500);
+  margin: var(--spacing-300);
+  width: 500px;
+  max-width: 70vw;
+}

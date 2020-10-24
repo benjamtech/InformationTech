@@ -1,0 +1,32 @@
+
+.ProjectWrapper {
+
+}
+
+.ProjectWrapper header {
+ height: 50px;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.ProjectWrapper header button {
+    border: 0;
+    background-color: transparent;
+    font-size: var(--font-size-500);
+    padding: var(--spacing-400);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ProjectWrapper header p {
+    margin: 0;
+    margin-left: var(--spacing-300);
+    font-size: var(--font-size-400);
+}
+
+.ProjectWrapper .projectContainer {
+    height: calc(100vh - 50px);
+}

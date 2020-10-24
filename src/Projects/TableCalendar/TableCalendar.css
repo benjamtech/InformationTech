@@ -1,0 +1,51 @@
+.TableCalendar {
+  overflow-x: auto;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-1);
+  padding: var(--spacing-600);
+}
+
+.TableCalendar table {
+  border-collapse: collapse;
+  border: 2px solid var(--border-color);
+  letter-spacing: 1px;
+}
+
+.TableCalendar caption {
+  margin-bottom: var(--spacing-600);
+  font-size: var(--font-size-600);
+}
+
+.TableCalendar td,
+.TableCalendar th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: var(--spacing-300) var(--spacing-500);
+}
+
+.TableCalendar th {
+  font-size: var(--font-size-400);
+}
+
+.TableCalendar td {
+  text-align: center;
+  font-size: var(--font-size-300);
+}
+
+@media screen and (max-width: 1000px) {
+  .TableCalendar td,
+  .TableCalendar th {
+    padding: var(--spacing-200) var(--spacing-400);
+  }
+
+  .TableCalendar th {
+    font-size: var(--font-size-200);
+  }
+
+  .TableCalendar td {
+    font-size: var(--font-size-100);
+  }
+}
