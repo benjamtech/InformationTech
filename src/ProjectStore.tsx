@@ -1,6 +1,7 @@
 import React from "react";
 import BenjamTechCV from "./Projects/BenjamTechCV/BenjamTechCV";
 import TableCalendar from "./Projects/TableCalendar/TableCalendar";
+import FjesBokForm from "./Projects/FjesBokForm/FjesBokForm";
 
 export interface ProjectShape {
     name: string;
@@ -26,6 +27,12 @@ const ProjectList: ProjectShape[] = [
         description: "A small project for showing my schedule in school and information about the classes",
         entryPoint: <TableCalendar />,
         id: 2,
+    },
+    {
+        name: `"Fjesbok" form`,
+        description: "A small project to show off some badass CSS skills", 
+        entryPoint: <FjesBokForm />,
+        id: 3,
     }
 ];
 

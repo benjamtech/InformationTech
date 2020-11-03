@@ -1,0 +1,75 @@
+.FjesBokDimitri {
+  width: 100vw;
+  height: 100%;
+  background-color: var(--bg-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Calibri, sans-serif;
+}
+
+.FjesBokDimitri form {
+  background-color: #b4c7e7;
+  border: 2px solid black;
+  border-radius: 50px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  padding-bottom: 40px;
+}
+
+.FjesBokDimitri h1,
+.FjesBokDimitri h2 {
+  margin: 5px 0px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.FjesBokDimitri h1 {
+  font-family: "mistral";
+}
+
+.FjesBokDimitri .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.FjesBokDimitri label {
+  margin: 20px 0px 3px 0px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.FjesBokDimitri .genderLabel {
+  margin: 0px;
+}
+
+.FjesBokDimitri .text {
+  border: 2px solid #374f87;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 95%;
+  margin: auto;
+}
+
+.FjesBokDimitri .submitBtn {
+  cursor: pointer; 
+
+  margin: 0px auto;
+  margin-top: 30px;
+  width: 170px;
+  padding: 8px;
+
+  background-color: #4473c5;
+  color: #fff;
+
+  border: 2px solid #374f87;
+  border-radius: 8px;
+
+  font-size: 18px;
+}

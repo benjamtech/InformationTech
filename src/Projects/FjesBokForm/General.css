@@ -1,0 +1,26 @@
+
+.modeContainer {
+    position: absolute;    
+    top: 20px;
+    right: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modeContainer p {
+    font-size: 18px;
+    margin-right: 16px;
+}
+
+.modeContainer button {
+    border: 0;
+    cursor: pointer;
+    background-color: #27AB83;
+    padding: 14px 22px;
+    border-radius: 12px; 
+    font-size: 16px;
+    color: #fff;
+}
