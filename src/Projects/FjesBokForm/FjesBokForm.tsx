@@ -29,12 +29,15 @@ export default () => {
 
   return (
     <div className={fancy ? "FjesBokBenji" : "FjesBokDimitri"}>
+      {/* This is to switch mode. All it does is to switch the root class */}
 
+      {/* position absolute to get it in the corner. Changes the mode */}
       <div className="modeContainer">
         <p>Mode: {fancy ? "Benji" : "Dimitri"}</p>
         <button onClick={handleModeChange}>Change Mode</button>
       </div>
 
+      {/* Just a form */}
       <form onSubmit={handleSubmit}>
         <h2>Bli medlem av</h2>
         <h1>FJESBOK</h1>

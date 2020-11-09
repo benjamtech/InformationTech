@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { IoMdClose } from "react-icons/io";
+import React from "react";
 import { ClassShape } from "./ClassStore";
 import "./TableCell.css";
 
