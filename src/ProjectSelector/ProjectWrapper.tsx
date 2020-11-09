@@ -3,7 +3,6 @@ import ProjectList, { ProjectShape } from "../ProjectStore";
 import "./ProjectWrapper.css";
 import { IoMdArrowBack } from "react-icons/io";
 
-
 interface PropShape {
   project: ProjectShape;
   setProject(project: ProjectShape | null): any;
@@ -15,20 +14,25 @@ export default (props: PropShape) => {
   return (
     <div className="ProjectWrapper">
       <header>
-
         {/* This sets the project back to zero (shows the ProjectSelector) */}
-        <button
-          onClick={() => {
-            props.setProject(null);
-          }}
-        >
-          <IoMdArrowBack />
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              props.setProject(null);
+            }}
+          >
+            <IoMdArrowBack />
+          </button>
 
-        <p>{props.project.name}</p>
+          <p>{props.project.name}</p>
+        </div>
+
+        <a href={props.project.githubURL} target="_blank">
+          GitHub
+        </a>
       </header>
 
-        {/* A smart little container for the projects */}
+      {/* A smart little container for the projects */}
       <div className="projectContainer">{props.children}</div>
     </div>
   );
