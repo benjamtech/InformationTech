@@ -2,6 +2,7 @@ import React from "react";
 import BenjamTechCV from "./Projects/BenjamTechCV/BenjamTechCV";
 import TableCalendar from "./Projects/TableCalendar/TableCalendar";
 import FjesBokForm from "./Projects/FjesBokForm/FjesBokForm";
+import FormServer from "./Projects/FormServer/FormServer";
 
 export interface ProjectShape {
     name: string;
@@ -28,16 +29,23 @@ const ProjectList: ProjectShape[] = [
         name: "Table Calendar",
         description: "A small project for showing my schedule in school and information about the classes",
         entryPoint: <TableCalendar />,
-        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/src/Projects/TableCalendar",
+        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/TableCalendar",
         id: 2,
     },
     {
         name: `"Fjesbok" form`,
         description: "A small project to show off some badass CSS skills", 
         entryPoint: <FjesBokForm />,
-        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/src/Projects/FjesBokForm",
+        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/FjesBokForm",
         id: 3,
-    }
+    },
+    { 
+        name: "Form with server submit",
+        description: "Static sites, and a form that stores submissions",
+        entryPoint: <FormServer />,
+        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/FormServer",
+        id: 4,
+    },
 ];
 
 export default ProjectList;

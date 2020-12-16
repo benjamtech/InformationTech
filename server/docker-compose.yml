@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  router:
+    image: traefik:v2.3
+    restart: always
+    command: 
+      - "--api.insecure=true"
+      - "--providers.docker"
+      - "--providers.docker.exposedByDefault=false"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    expose: 
+      - "80"
+      - "8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  testurl:
+    image: containous/whoami
+    restart: always
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.testurl-router.rule=PathPrefix(`/test`)"
+
+  nodeapi:
+    restart: always
+    build:
+      context: formserver
+      dockerfile: Dockerfile
+    expose:
+      - "80"
+    ports:
+      - "1001:80"
+    depends_on:
+      - redisserver
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nodeapi-router.rule=PathPrefix(`/node`)"
+      - "traefik.http.middlewares.nodeapi-rempath.stripprefix.prefixes=/node"
+      - "traefik.http.routers.nodeapi-router.middlewares=nodeapi-rempath"
+  
+  redisserver:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
