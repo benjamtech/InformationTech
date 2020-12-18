@@ -14,7 +14,7 @@ interface MenuShape {
 
 const menu: MenuShape[] = [
   {
-    name: "Home",
+    name: "Hjem",
     component: <Home />,
     id: 1,
   },

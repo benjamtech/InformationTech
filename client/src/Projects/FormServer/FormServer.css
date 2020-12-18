@@ -1,7 +1,7 @@
 .FormServer {
   background-color: #d7d7fd;
-  height: 100%;
-  width: 100vw;
+  min-height: 100%;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   padding: var(--spacing-600);
