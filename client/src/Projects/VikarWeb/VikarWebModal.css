@@ -1,0 +1,85 @@
+.VikarWeb .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.VikarWeb .modalShow {
+    display: flex;
+}
+
+.VikarWeb .modalHide {
+    display: none;
+}
+
+.VikarWeb .modalBody {
+  height: 80vh;
+  background-color: #F0F4F8;
+  width: 70vw;
+  box-shadow: var(--box-shadow-400);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: var(--spacing-500);
+  position: absolute;
+
+  animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(2999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .VikarWeb .modalBody {
+    height: 80vh;
+    width: 90vw;
+  }
+}
+
+.VikarWeb .modalBody form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+}
+
+
+.VikarWeb .modalBody input {
+   font-size: 22px;
+   border: 0;
+   border-bottom: 1px solid gray;
+   margin-bottom: 22px;
+   padding: 10px 22px;
+
+   width: 60vw;
+   max-width: 400px;
+}
+
+.VikarWeb .modalBody button {
+    margin-right: 22px;
+    font-size: 18px;
+    padding: 9px 24px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}

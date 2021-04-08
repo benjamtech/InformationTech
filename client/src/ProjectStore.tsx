@@ -3,6 +3,7 @@ import BenjamTechCV from "./Projects/BenjamTechCV/BenjamTechCV";
 import TableCalendar from "./Projects/TableCalendar/TableCalendar";
 import FjesBokForm from "./Projects/FjesBokForm/FjesBokForm";
 import FormServer from "./Projects/FormServer/FormServer";
+import VikarWeb from "./Projects/VikarWeb/VikarWeb";
 
 export interface ProjectShape {
     name: string;
@@ -45,6 +46,13 @@ const ProjectList: ProjectShape[] = [
         entryPoint: <FormServer />,
         githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/FormServer",
         id: 4,
+    },
+    {
+        name: "VikarWeb",
+        description: "A web portal to control a simple DB",
+        entryPoint: <VikarWeb />,
+        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/VikarWeb",
+        id: 5,
     },
 ];
 

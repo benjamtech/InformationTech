@@ -1,0 +1,87 @@
+.VikarWeb {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    max-width: 100%;
+    justify-content: space-between;
+}
+
+.VikarWeb .columnList {
+    background-color: #E8E6E1;
+    width: 400px;
+    max-width: 50vh;
+    height: calc(100vh - 50px);
+}
+
+.VikarWeb .vikarRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black
+}
+
+.VikarWeb .vikarRow p {
+    font-size: 20px;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.VikarWeb .vikarRow button {
+    border: 0;
+    background-color: #7BC47F;
+    color: #fff;
+    height: 70px;
+    font-size: 18px;
+    padding: 15px 32px;
+    cursor: pointer;
+}
+
+
+.VikarWeb .viewItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #F0F4F8;
+
+    color: #404040;
+}
+
+.VikarWeb .viewItem h1 {
+    font-size: 30px;
+}
+
+.VikarWeb .viewItem p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.VikarWeb ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.VikarWeb .liDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #000;
+}
+
+.VikarWeb .liDiv p {
+    font-size: 22px;
+}
+
+.VikarWeb .liDiv button {
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color: #E12D39;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}

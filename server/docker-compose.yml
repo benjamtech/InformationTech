@@ -49,3 +49,21 @@ services:
       - "6379:6379"
     expose:
       - "6379"
+
+  mysqldb: 
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: "${mysql_db}"
+      MYSQL_USER: "${mysql_user}"
+      MYSQL_PASSWORD: "${mysql_pwd}"
+      MYSQL_ROOT_PASSWORD: "${mysql_root_pwd}"
+    
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql" 
+ 
