@@ -51,13 +51,13 @@ services:
       - "6379"
 
   mysqldb: 
-    image: mysql
+    image: mysql:8.0.21
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_DATABASE: "${mysql_db}"
-      MYSQL_USER: "${mysql_user}"
-      MYSQL_PASSWORD: "${mysql_pwd}"
-      MYSQL_ROOT_PASSWORD: "${mysql_root_pwd}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PWD}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PWD}"
     
     ports:
       - "3306:3306"

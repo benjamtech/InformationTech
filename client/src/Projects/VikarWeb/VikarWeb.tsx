@@ -102,10 +102,10 @@ export default () => {
                 <div className="modalBody">
                     <h1>Ny vikar</h1>
                     <form onSubmit={addTeacher}>
-                        <input name="fornavn" required placeholder="Fornavn" type="text" value={fornavn} onChange={(e) => setFornavn(e.target.value)} />
-                        <input name="etternavn" required placeholder="Etternavn" type="text" value={etternavn} onChange={(e) => setEtternavn(e.target.value)} />
-                        <input name="tlf" required placeholder="Telefon" type="tel" value={tlf} onChange={(e) => setTlf(e.target.value)} />
-                        <input name="epost" required placeholder="Epost" type="email" value={epost} onChange={(e) => setEpost(e.target.value)} />
+                        <input name="fornavn" maxLength={20} required placeholder="Fornavn" type="text" value={fornavn} onChange={(e) => setFornavn(e.target.value)} />
+                        <input name="etternavn" maxLength={20} required placeholder="Etternavn" type="text" value={etternavn} onChange={(e) => setEtternavn(e.target.value)} />
+                        <input name="tlf" maxLength={8} required placeholder="Telefon" type="tel" value={tlf} onChange={(e) => setTlf(e.target.value)} />
+                        <input name="epost" maxLength={255} required placeholder="Epost" type="email" value={epost} onChange={(e) => setEpost(e.target.value)} />
 
 
                         <div className="row">

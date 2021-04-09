@@ -1,21 +1,20 @@
 var mysql = require('mysql');
 require("dotenv").config();
 
-var connection = mysql.createConnection({
+const db_config = {
     host: "mysqldb",
     user: "root",
-    password: process.env.mysql_root_pwd,
-    database: process.env.mysql_db
-});
+    connectionLimit: 100,
+    waitForConnection: true,
+    queueLimit: 0,
+    password: process.env.MYSQL_ROOT_PWD,
+    database: process.env.MYSQL_DATABASE,
+    wait_timeout: 28800,
+    connect_timeout: 10,
+}
+
+var connection = mysql.createPool(db_config);
 
 
-
-connection.connect(function (error) {
-    if (!!error) {
-        console.log(error);
-    } else {
-        console.log('Connected!');
-    }
-});
 
 module.exports = connection;
