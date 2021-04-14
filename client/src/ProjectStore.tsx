@@ -4,6 +4,7 @@ import TableCalendar from "./Projects/TableCalendar/TableCalendar";
 import FjesBokForm from "./Projects/FjesBokForm/FjesBokForm";
 import FormServer from "./Projects/FormServer/FormServer";
 import VikarWeb from "./Projects/VikarWeb/VikarWeb";
+import BibWeb from "./Projects/BibWeb/BibWeb";
 
 export interface ProjectShape {
     name: string;
@@ -35,12 +36,12 @@ const ProjectList: ProjectShape[] = [
     },
     {
         name: `"Fjesbok" form`,
-        description: "A small project to show off some badass CSS skills", 
+        description: "A small project to show off some badass CSS skills",
         entryPoint: <FjesBokForm />,
         githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/FjesBokForm",
         id: 3,
     },
-    { 
+    {
         name: "Form with server submit",
         description: "Static sites, and a form that stores submissions",
         entryPoint: <FormServer />,
@@ -54,6 +55,13 @@ const ProjectList: ProjectShape[] = [
         githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/VikarWeb",
         id: 5,
     },
+    {
+        name: "BibWeb",
+        description: "A web portal to control BibWeb, a library database system",
+        entryPoint: <BibWeb />,
+        githubURL: "https://github.com/benjamtech/InformationTech/tree/main/client/src/Projects/BibWeb",
+        id: 6,
+    }
 ];
 
 export default ProjectList;
