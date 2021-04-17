@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Conn from "../Conn";
+import { AuthorShape } from "../DataShapes";
 import { FormProps } from "./formInfo";
 
 export default (props: FormProps) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [authors, setAuthors] = useState<AuthorShape[]>([]);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     props.setSelectedItem({
       ...props.selectedItem,
       [e.target.name]: e.target.value,
     });
   };
 
-  const lagre = () => {
-    if (props.selectedMode === "create") {
-      // save new item
-    } else if (props.selectedMode === "edit") {
-      // save changes
-    }
+  const populateData = async () => {
+    const data: any = await Conn.get("author");
+    setAuthors(data);
   };
+
+  useEffect(() => {
+    populateData();
+  }, []);
 
   return (
     <div className="dataForm">
@@ -47,12 +54,17 @@ export default (props: FormProps) => {
         value={props.selectedItem.numberOf}
       />
 
-      <button
-        onClick={lagre}
-        style={{ display: props.selectedMode === "normal" ? "none" : "block" }}
+      <select
+        required
+        disabled={props.selectedMode === "normal" ? true : false}
+        name="authorId"
+        value={props.selectedItem.authorId}
+        onChange={handleChange}
       >
-        {props.selectedMode === "edit" ? "Lagre endringer" : "Lag ny"}
-      </button>
+        {authors.map((item: AuthorShape) => (
+          <option value={item.id}>{item.firstName}</option>
+        ))}
+      </select>
     </div>
   );
 };

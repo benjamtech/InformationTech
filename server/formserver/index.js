@@ -1,6 +1,5 @@
 const express = require("express");
 const redis = require("redis");
-const mysql = require("mysql");
 const connection = require("./db");
 
 const app = express();
@@ -8,6 +7,8 @@ const port = 80;
 const redisClient = redis.createClient({ host: "redisserver" }); // some sweet sweet database support
 
 app.use(express.json()); // Add JSON capability for post requests in body
+
+require("./bibweb/bibweb")(app);
 
 // A test endpoint
 app.get("/", (req, res) => {
@@ -20,11 +21,15 @@ app.post("/form", (req, res) => {
   const lastname = req.body.lastname;
   const mail = req.body.mail;
 
-  redisClient.rpush("formList", `${firstname}, ${lastname}, ${mail}`, (err, keys) => {
-    if (err) {
-      res.status(500).send({ message: "Insert failed" });
+  redisClient.rpush(
+    "formList",
+    `${firstname}, ${lastname}, ${mail}`,
+    (err, keys) => {
+      if (err) {
+        res.status(500).send({ message: "Insert failed" });
+      }
     }
-  });
+  );
 
   res.status(201).send({ message: "Oki doki, it's in the db now" });
 });
@@ -52,36 +57,42 @@ app.post("/vikarweb/vikar", (req, res) => {
     epost: req.body.epost,
   };
 
-  connection.query('INSERT INTO vikarsystem.vikar SET ?', values, (err, result) => {
+  connection.query(
+    "INSERT INTO vikarsystem.vikar SET ?",
+    values,
+    (err, result) => {
+      if (err) {
+        res.status(500).send({ message: err });
+      } else {
+        res.status(200).send({ message: "Done" });
+      }
+    }
+  );
+});
+
+app.get("/vikarweb/vikar", (req, res) => {
+  connection.query("SELECT * FROM vikarsystem.vikar;", (err, result) => {
     if (err) {
       res.status(500).send({ message: err });
     } else {
-      res.status(200).send({ message: "Done" });
-    }
-  })
-})
-
-
-app.get("/vikarweb/vikar", (req, res) => {
-  connection.query('SELECT * FROM vikarsystem.vikar;', (err, result) => {
-    if (err) {
-      res.status(500).send({ message: err })
-    } else {
       res.send(result);
     }
-  })
-})
+  });
+});
 
 app.delete("/vikarweb/vikar/:id", (req, res) => {
-  connection.query('DELETE FROM vikarsystem.vikar WHERE vikar_id=?;', req.params.id, (err, result) => {
-    if (err) {
-      res.status(500).send({ message: err })
-    } else {
-      res.send(result);
+  connection.query(
+    "DELETE FROM vikarsystem.vikar WHERE vikar_id=?;",
+    req.params.id,
+    (err, result) => {
+      if (err) {
+        res.status(500).send({ message: err });
+      } else {
+        res.send(result);
+      }
     }
-  })
-})
-
+  );
+});
 
 // Starting the server
 app.listen(port, () => {
