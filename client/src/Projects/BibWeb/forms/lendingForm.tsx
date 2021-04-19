@@ -10,6 +10,7 @@ export default (props: FormProps) => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
+    console.log(typeof e.target.value);
     props.setSelectedItem({
       ...props.selectedItem,
       [e.target.name]: e.target.value,
@@ -60,6 +61,7 @@ export default (props: FormProps) => {
         value={props.selectedItem.authorId}
         onChange={handleChange}
       >
+        <option value={0}>Ingen valgt</option>
         {students.map((item: StudentShape) => (
           <option value={item.id}>{item.firstName}</option>
         ))}
@@ -71,9 +73,10 @@ export default (props: FormProps) => {
         required
         disabled={props.selectedMode === "normal" ? true : false}
         name="bookId"
-        value={props.selectedItem.authorId}
+        value={props.selectedItem.bookId}
         onChange={handleChange}
       >
+        <option value={0}>Ingen valgt</option>
         {books.map((item: BookShape) => (
           <option value={item.id}>{item.name}</option>
         ))}

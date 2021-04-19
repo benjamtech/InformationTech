@@ -71,6 +71,7 @@ export default (props: FormProps) => {
         value={props.selectedItem.authorId}
         onChange={handleChange}
       >
+        <option value={0}>Ingen valgt</option>
         {authors.map((item: AuthorShape) => (
           <option value={item.id}>{item.firstName}</option>
         ))}

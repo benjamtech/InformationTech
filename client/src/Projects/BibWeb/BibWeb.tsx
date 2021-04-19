@@ -33,14 +33,14 @@ const standardData: any = {
   book: {
     name: "",
     isbn: "",
-    numberOf: NaN,
-    authorId: NaN,
+    numberOf: 0,
+    authorId: 0,
   },
   lending: {
-    dateLentOut: new Date(),
-    dateRequiredIn: new Date(),
-    bookId: NaN,
-    studentId: NaN,
+    dateLentOut: "1970-01-01",
+    dateRequiredIn: "1970-01-01",
+    bookId: 0,
+    studentId: 0,
   },
   student: {
     firstName: "",
