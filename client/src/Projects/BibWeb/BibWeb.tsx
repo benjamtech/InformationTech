@@ -102,7 +102,6 @@ export default () => {
   return (
     <div className="BibWeb">
       <div className="editSelector">
-        <p>BibWeb</p>
         <ul>
           {typesList.map((item) => (
             <li key={item}>
@@ -110,8 +109,10 @@ export default () => {
                 disabled={selectedMode === "normal" ? false : true}
                 className={selectedType === item ? "selectedType" : ""}
                 onClick={() => {
-                  setListData([]);
-                  setSelectedType(item);
+                  if (selectedType !== item) {
+                    setListData([]);
+                    setSelectedType(item);
+                  }
                 }}
               >
                 {typesNor[item]}
@@ -123,6 +124,7 @@ export default () => {
 
       <div className="listDiv">
         <button
+          className="createBtn"
           disabled={selectedMode === "normal" ? false : true}
           onClick={() => {
             setSelectedItem(standardData[selectedType]);
@@ -152,7 +154,11 @@ export default () => {
             }
 
             return (
-              <li key={item.id} onClick={() => setSelectedItem(item)}>
+              <li
+                key={item.id}
+                onClick={() => setSelectedItem(item)}
+                className={selectedItem.id === item.id ? "selectedType" : ""}
+              >
                 <p>{name}</p>
                 <div className="liBtnDiv">
                   <button onClick={() => setSelectedMode("edit")}>
@@ -173,32 +179,36 @@ export default () => {
       </div>
 
       <div className="viewItem">
-        <button
-          onClick={() => {
-            setSelectedMode("normal");
-            setSelectedItem(standardData[selectedType]);
-          }}
-          style={{
-            display: selectedMode === "normal" ? "none" : "block",
-          }}
-        >
-          Avbryt
-        </button>
-
-        <button
-          onClick={save}
-          style={{
-            display: selectedMode === "normal" ? "none" : "block",
-          }}
-        >
-          {selectedMode === "edit" ? "Lagre endringer" : "Lagre"}
-        </button>
-
         <ItemViewer
           selectedMode={selectedMode}
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
         />
+
+        <div className="btnDiv">
+          <div className="btnInnerDiv">
+            <button
+              onClick={() => {
+                setSelectedMode("normal");
+                setSelectedItem(standardData[selectedType]);
+              }}
+              style={{
+                display: selectedMode === "normal" ? "none" : "block",
+              }}
+            >
+              Avbryt
+            </button>
+
+            <button
+              onClick={save}
+              style={{
+                display: selectedMode === "normal" ? "none" : "block",
+              }}
+            >
+              {selectedMode === "edit" ? "Lagre endringer" : "Lagre"}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

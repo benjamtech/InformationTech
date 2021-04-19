@@ -29,9 +29,10 @@ export default (props: FormProps) => {
 
   return (
     <div className="dataForm">
+      <label htmlFor="lendingDateLentOut">Dato utlånt</label>
       <input
+        id="lendingDateLentOut"
         type="date"
-        placeholder="Dato utlånt"
         disabled={props.selectedMode === "normal" ? true : false}
         required
         name="dateLentOut"
@@ -39,9 +40,10 @@ export default (props: FormProps) => {
         value={props.selectedItem.lastName}
       />
 
+      <label htmlFor="lendingDateRequiredIn">Dato innkrevd</label>
       <input
+        id="lendingDateRequiredIn"
         type="date"
-        placeholder="Dato innkrevd"
         required
         disabled={props.selectedMode === "normal" ? true : false}
         name="dateRequiredIn"
@@ -49,7 +51,9 @@ export default (props: FormProps) => {
         value={props.selectedItem.phone}
       />
 
+      <label htmlFor="lendingStudentId">Elev</label>
       <select
+        id="lendingStudentId"
         required
         disabled={props.selectedMode === "normal" ? true : false}
         name="studentId"
@@ -61,7 +65,9 @@ export default (props: FormProps) => {
         ))}
       </select>
 
+      <label htmlFor="lendingBookId">Bok</label>
       <select
+        id="lendingBookId"
         required
         disabled={props.selectedMode === "normal" ? true : false}
         name="bookId"

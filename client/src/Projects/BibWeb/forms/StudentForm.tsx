@@ -11,7 +11,9 @@ export default (props: FormProps) => {
 
   return (
     <div className="dataForm">
+      <label htmlFor="studentFirstName">Fornavn</label>
       <input
+        id="studentFirstName"
         required
         disabled={props.selectedMode === "normal" ? true : false}
         placeholder="Fornavn"
@@ -20,7 +22,10 @@ export default (props: FormProps) => {
         onChange={handleChange}
         value={props.selectedItem.firstName}
       />
+
+      <label htmlFor="studentLastName">Etternavn</label>
       <input
+        id="studentLastName"
         required
         placeholder="Etternavn"
         disabled={props.selectedMode === "normal" ? true : false}
@@ -29,19 +34,25 @@ export default (props: FormProps) => {
         onChange={handleChange}
         value={props.selectedItem.lastName}
       />
+
+      <label htmlFor="studentPhone">Telefon</label>
       <input
+        id="studentPhone"
         required
-        placeholder="Telefon"
+        placeholder="F.eks. 12345678"
         disabled={props.selectedMode === "normal" ? true : false}
         type="tel"
         name="phone"
         onChange={handleChange}
         value={props.selectedItem.phone}
       />
+
+      <label htmlFor="studentMail">Epost</label>
       <input
+        id="studentMail"
         required
         disabled={props.selectedMode === "normal" ? true : false}
-        placeholder="Epost"
+        placeholder="F.eks. ola@nordmann.no"
         type="email"
         name="mail"
         onChange={handleChange}

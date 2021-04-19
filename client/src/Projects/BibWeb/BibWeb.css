@@ -1,5 +1,158 @@
+.BibWeb ul.disabled {
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+}
 
-ul.disabled {
-    opacity: 0.5;
-    user-select: none;
+.BibWeb ul.disabled * {
+  user-select: none;
+  pointer-events: none;
+}
+
+.BibWeb {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  max-width: 100%;
+}
+
+.BibWeb .editSelector {
+  width: 90px;
+  height: calc(100vh - 50px);
+  background-color: #bcccdc;
+}
+
+.BibWeb .editSelector ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.BibWeb .editSelector button {
+  border: 0;
+  background-color: transparent;
+  width: 90px;
+  height: 90px;
+  border-bottom: 1px solid #102a43;
+  color: #102a43;
+  cursor: pointer;
+}
+
+.BibWeb .editSelector .selectedType {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.BibWeb .listDiv {
+  width: 300px;
+  background-color: #f0f4f8;
+}
+
+.BibWeb .listDiv ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.BibWeb .listDiv li {
+  padding: 12px 21px;
+  border-bottom: 1px solid #102a43;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BibWeb .listDiv .selectedType {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.BibWeb .createBtn {
+  border: 0;
+  width: 100%;
+  padding: 12px 21px;
+  background-color: #65d6ad;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.BibWeb .listDiv p {
+  font-size: 18px;
+}
+
+.BibWeb .listDiv .liBtnDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.BibWeb .listDiv .liBtnDiv button {
+  background-color: #fff;
+  border: 0;
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.BibWeb .viewItem {
+  padding: 40px;
+  width: calc(100vw - 90px - 300px);
+  height: calc(100vh - 50px);
+  overflow: auto;
+  background-color: #334e68;
+}
+
+.BibWeb .dataForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.BibWeb .dataForm label {
+  margin-top: 21px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.BibWeb .dataForm input,
+.BibWeb .dataForm select {
+  font-size: 18px;
+  width: 90%;
+  max-width: 300px;
+  padding: 7px;
+  border: 0;
+  background-color: #f0f4f8;
+}
+
+.BibWeb .dataForm input:disabled,
+.BibWeb .dataForm select:disabled {
+  background-color: #d9e2ec !important;
+  color: #829AB1 !important;
+  opacity: 1 !important;
+} 
+
+.BibWeb .viewItem .btnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 21px;
+}
+
+.BibWeb .viewItem .btnInnerDiv {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.BibWeb .viewItem button {
+  margin-bottom: 12px;
+  cursor: pointer;
+  padding: 12px 21px;
+  border: 0;
 }

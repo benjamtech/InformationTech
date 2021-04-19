@@ -26,35 +26,45 @@ export default (props: FormProps) => {
 
   return (
     <div className="dataForm">
+      <label htmlFor="bookName">Navn</label>
       <input
+        id="bookName"
         required
         disabled={props.selectedMode === "normal" ? true : false}
-        placeholder="Navn"
+        placeholder="F.eks. Harry Potter"
         type="text"
         name="name"
         onChange={handleChange}
         value={props.selectedItem.name}
       />
+
+      <label htmlFor="bookISBN">ISBN</label>
       <input
+        id="bookISBN"
         required
         disabled={props.selectedMode === "normal" ? true : false}
-        placeholder="ISBN"
+        placeholder="F.eks. 12345"
         type="text"
         name="isbn"
         onChange={handleChange}
         value={props.selectedItem.isbn}
       />
+
+      <label htmlFor="bookNumberOf">Antall bøker</label>
       <input
+        id="bookNumberOf"
         required
         disabled={props.selectedMode === "normal" ? true : false}
-        placeholder="Antall bøker"
+        placeholder="F.eks. 4"
         type="number"
         name="numberOf"
         onChange={handleChange}
         value={props.selectedItem.numberOf}
       />
 
+      <label htmlFor="bookSelectAuthor">Forfatter</label>
       <select
+        id="bookSelectAuthor"
         required
         disabled={props.selectedMode === "normal" ? true : false}
         name="authorId"
